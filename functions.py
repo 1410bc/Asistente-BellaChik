@@ -53,7 +53,7 @@ def create_google_calendar_event(creds, event_title, start_time, end_time):
 
     # Crear el evento
     event_result = service.events().insert(
-        calendarId='6873be2590c84c76a01e04503b24b15786b35ae2824b0e2a36edc6da42a63173@group.calendar.google.com', 
+        calendarId='c_5429309c7c93803f3c31f144ef187db179ada2d6ad3d527aba230d3293704913@group.calendar.google.com', 
         body=event
     ).execute()
     
@@ -65,7 +65,7 @@ def get_google_calendar_events(creds, time_min, time_max):
     service = build('calendar', 'v3', credentials=creds)
 
     events_result = service.events().list(
-        calendarId='6873be2590c84c76a01e04503b24b15786b35ae2824b0e2a36edc6da42a63173@group.calendar.google.com',  # Cambia por tu ID de calendario si no usas el principal
+        calendarId='c_5429309c7c93803f3c31f144ef187db179ada2d6ad3d527aba230d3293704913@group.calendar.google.com',  # Cambia por tu ID de calendario si no usas el principal
         timeMin=time_min,
         timeMax=time_max,
         singleEvents=True,
@@ -111,7 +111,7 @@ def update_google_calendar_event_by_details(creds, event_title, start_time, upda
 
                 # Actualizar el evento en Google Calendar
                 updated_event = service.events().update(
-                    calendarId='6873be2590c84c76a01e04503b24b15786b35ae2824b0e2a36edc6da42a63173@group.calendar.google.com',
+                    calendarId='c_5429309c7c93803f3c31f144ef187db179ada2d6ad3d527aba230d3293704913@group.calendar.google.com',
                     eventId=event['id'],
                     body=event
                 ).execute()
@@ -149,7 +149,7 @@ def delete_google_calendar_event_by_details(creds, event_title, start_time):
             if event['summary'] == event_title and event['start']['dateTime'] == start_time_z:
                 # Eliminar el evento
                 service.events().delete(
-                    calendarId='6873be2590c84c76a01e04503b24b15786b35ae2824b0e2a36edc6da42a63173@group.calendar.google.com',
+                    calendarId='c_5429309c7c93803f3c31f144ef187db179ada2d6ad3d527aba230d3293704913@group.calendar.google.com',
                     eventId=event['id']
                 ).execute()
 
