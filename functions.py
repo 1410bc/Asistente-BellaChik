@@ -14,7 +14,7 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 
 SCOPES = ['https://www.googleapis.com/auth/calendar']
 
-#Autenticacion de google
+#Autenticacion de googl
 def authenticate_google():
     """
     Maneja la autenticación con Google y devuelve las credenciales.
